@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "ts-node": "ts-node ./sample.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^16.3.2"
+    },
+    "dependencies": {
+        "typescript": "^4.4.3"
+    }
+}

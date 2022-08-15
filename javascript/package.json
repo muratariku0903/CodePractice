@@ -1,0 +1,9 @@
+{
+    "type": "module",
+    "dependencies": {
+        "dayjs": "^1.10.8"
+    },
+    "devDependencies": {
+        "got": "^12.1.0"
+    }
+}

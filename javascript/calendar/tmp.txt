@@ -1,0 +1,65 @@
+const calender_table = document.getElementById('calendar');
+const year_input = document.getElementById('year');
+const month_input = document.getElementById('month');
+const date_input = document.getElementById('day');
+const weeks = ["日", "月", "火", "水", "木", "金", "土"];
+const week_cnt = 7;
+
+document.getElementById('make').onclick = function () {
+    const year = Number(year_input.value);
+    const month = Number(month_input.value);
+    const date = Number(date_input.value);
+    const last_day = getLastDay(year, month);
+    const first_day = new Date(year, month - 1, 1).getDay();
+    const row_cnt = Math.ceil((first_day + last_day) / week_cnt);
+
+    let calendar = '';
+    calendar += '<tr>';
+    for (let i = 0; i < week_cnt; i++) {
+        calendar += "<th class='th'>" + weeks[i] + "</th>";
+    }
+    calendar += '</tr>';
+
+    calendar += '<tr>';
+    for (let i = 0; i < first_day; i++) {
+        calendar += "<td></td>";
+    }
+    let day = 1;
+    for (let i = first_day; i < week_cnt; i++) {
+        if (day === date) {
+            calendar += "<td class='current'>" + (day) + "</td>";
+        } else {
+            calendar += "<td>" + (day) + "</td>";
+        }
+        day++;
+    }
+    calendar += '</tr>';
+
+
+    for (let row = 0; row < row_cnt - 1; row++) {
+        calendar += '<tr>';
+        for (let i = 0; i < week_cnt; i++) {
+            if (day === date) {
+                calendar += "<td class='current'>" + (day) + "</td>";
+            } else {
+                calendar += "<td>" + (day) + "</td>";
+            }
+            if (day === last_day) {
+                for (let j = i + 1; j < week_cnt; j++) {
+                    calendar += "<td></td>";
+                }
+                break;
+            } else {
+                day++;
+            };
+        }
+        calendar += '</tr>';
+    }
+
+    calender_table.innerHTML = calendar;
+}
+
+const getLastDay = (year, month) => {
+    return new Date(year, month, 0).getDate();
+};
+
