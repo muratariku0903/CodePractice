@@ -115,6 +115,16 @@ const test_11 = function (func: (...root: (TreeNode | null)[]) => any, test_case
     }
 }
 
+const test_12 = function (func: (str: string, nums: number[]) => any, test_cases: [string, number[]][]): void {
+    for (const test_case of test_cases) {
+        const start = performance.now();
+        console.log(func(test_case[0], test_case[1]));
+        const end = performance.now();
+        console.log(end - start + "[ms]\n");
+    }
+}
+
+
 
 export const tests = {
     'str': test_1,
@@ -128,4 +138,5 @@ export const tests = {
     'tree_node': test_11,
     'strArr': test_8,
     'str_num': test_10,
+    'str_numArr': test_12,
 };
