@@ -79,3 +79,11 @@ bool validateInputNum(int? min, int? max, int inputNum) {
 
   return true;
 }
+
+void dump(List<Object?> values) {
+  for (var value in values) {
+    stdout.write(value);
+    stdout.write('\n');
+  }
+  stdout.write('\n');
+}
