@@ -3,7 +3,6 @@ import { ListNode, TreeNode } from './classes/nodes';
 
 const performance = require('perf_hooks').performance;
 
-// 各関数の返り値がanyになってるけど、ジェネリクス使って呼び出し元で型を指定できるようにすれば？
 
 // テストデータとして文字列を取る。
 const test_1 = function (func: (...msg: string[]) => any, test_cases: string[][]): void {
