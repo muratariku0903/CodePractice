@@ -123,6 +123,16 @@ const test_12 = function (func: (str: string, nums: number[]) => any, test_cases
     }
 }
 
+//　テストデータとしてリストノードと数値を受け取る。
+const test_13 = function (func: (root: (ListNode | null), num: number) => any, test_cases: [(ListNode | null), number][]): void {
+    for (const test_case of test_cases) {
+        const start = performance.now();
+        console.log(func(test_case[0], test_case[1]));
+        const end = performance.now();
+        console.log(end - start + "[ms]\n");
+    }
+}
+
 
 
 export const tests = {
@@ -138,4 +148,5 @@ export const tests = {
     'strArr': test_8,
     'str_num': test_10,
     'str_numArr': test_12,
+    'list_node_num': test_13,
 };
