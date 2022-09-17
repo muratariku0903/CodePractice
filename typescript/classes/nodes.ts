@@ -16,7 +16,6 @@ export const createTreeNode = (arr: (number | null)[], idx: number = 0): TreeNod
     if (arr[idx] === null) return null;
     const left_idx = (idx + 1) * 2 - 1;
     const right_idx = (idx + 1) * 2;
-    console.log(idx, left_idx, right_idx);
     return new TreeNode(
         Number(arr[idx]),
         createTreeNode(arr, left_idx),
