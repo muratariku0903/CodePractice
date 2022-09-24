@@ -17,20 +17,26 @@ from test import test
 from functions import get_test_data
 from classes.node.TreeNodeHelper import TreeNodeHelper
 from classes.node.ListNodeHelper import ListNodeHelper
-tsh = TreeNodeHelper()
 
-print(1/24)
 
 # @profile
-def func(nums1, nums2):
-    set1 = set(nums1)
-    set2 = set(nums2)
-    return [list(set1-set2), list(set2-set1)]
+def func(grid: List[List[int]]) -> List[List[int]]:
+    print()
+    
+    return
 
 
 tests = [
-    [[1, 2, 3], [2, 4, 6]],
-    [[1, 2, 3, 3], [1, 1, 2, 2]],
+    [
+        [[9, 9, 8, 1], [5, 6, 2, 6], [8, 2, 6, 4], [6, 2, 2, 2]]
+    ],
+    [
+        [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 2, 1, 1],
+         [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]
+    ],
+    [
+        [[12, 1, 1], [12, 1, 1], [12, 1, 1]]
+    ],
 ]
 
 # なるべく、テストケースは自分で考える。バグが起こりそうなシチュエーションを想定する。
