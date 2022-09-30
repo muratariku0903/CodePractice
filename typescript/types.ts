@@ -6,8 +6,8 @@ export type NumNumArr = [number[], ...number[]];
 
 export type StrStrArr = [string, string[]];
 
-export type Matrix = number[][];
+export type Matrix<T> = T[][];
 
-export type NumMatrix = [Matrix, ...number[]];
+export type NumMatrix<T> = [Matrix<T>, ...number[]];
 
 export type NodeType = TreeNode | ListNode;

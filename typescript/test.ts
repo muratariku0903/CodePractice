@@ -36,7 +36,7 @@ const test_3 = function (func: (numArr: number[], ...nums: number[] | any) => an
 }
 
 // テストデータとして、マトリックス(複数)をとる
-const test_4 = function (func: (...matrix: Matrix[]) => any, test_cases: Matrix[][]): void {
+const test_4 = function (func: (...matrix: Matrix<number>[]) => any, test_cases: Matrix<number>[][]): void {
     for (const test_case of test_cases) {
         const start = performance.now();
         console.log(func(...test_case));
@@ -86,7 +86,7 @@ const test_8 = function (func: (...strArr: string[][]) => any, test_cases: strin
 }
 
 
-const test_9 = function (func: (matrix: Matrix, ...num: number[] | any) => any, test_cases: NumMatrix[]): void {
+const test_9 = function (func: (matrix: Matrix<number>, ...num: number[] | any) => any, test_cases: NumMatrix<number>[]): void {
     for (const test_case of test_cases) {
         const nums = test_case.splice(1, test_case.length);
         const start = performance.now();
